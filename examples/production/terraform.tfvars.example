@@ -21,15 +21,12 @@ services_cidr  = "10.2.0.0/20"
 
 # materialize_instances = [
 #   {
-#     name                              = "analytics"
-#     namespace                         = "materialize-environment"
-#     database_name                     = "analytics_db"
-#     cpu_request                       = "2"
-#     memory_request                    = "4Gi"
-#     memory_limit                      = "4Gi"
-#     authenticator_kind                = "Password"
-#     external_login_password_mz_system = random_password.analytics_mz_system.result
-#     license_key                       = "[...]"
+#     name           = "analytics"
+#     namespace      = "materialize-environment"
+#     database_name  = "analytics_db"
+#     cpu_request    = "2"
+#     memory_request = "4Gi"
+#     memory_limit   = "4Gi"
 #   },
 #   {
 #     name           = "demo"
@@ -38,6 +35,5 @@ services_cidr  = "10.2.0.0/20"
 #     cpu_request    = "2"
 #     memory_request = "4Gi"
 #     memory_limit   = "4Gi"
-#     license_key    = "[...]"
 #   }
 # ]

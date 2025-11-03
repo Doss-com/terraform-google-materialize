@@ -15,13 +15,38 @@ variable "prefix" {
   default     = "materialize"
 }
 
-variable "network_config" {
-  description = "Network configuration for the GKE cluster"
-  type = object({
-    subnet_cidr   = string
-    pods_cidr     = string
-    services_cidr = string
-  })
+# variable "network_config" {
+#   description = "Network configuration for the GKE cluster"
+#   type = object({
+#     subnet_cidr   = string
+#     pods_cidr     = string
+#     services_cidr = string
+#   })
+# }
+
+variable "network_name" {
+  description = "Name of the existing VPC network to use"
+  type        = string
+}
+
+variable "subnet_name" {
+  description = "Name of the existing subnet to use"
+  type        = string
+}
+
+variable "network_id" {
+  description = "ID of the existing VPC network"
+  type        = string
+}
+
+variable "pods_cidr" {
+  description = "CIDR block for pods"
+  type        = string
+}
+
+variable "services_cidr" {
+  description = "CIDR block for services"
+  type        = string
 }
 
 variable "gke_config" {
@@ -35,8 +60,8 @@ variable "gke_config" {
   })
   default = {
     node_count   = 1
-    machine_type = "n2-highmem-8"
-    disk_size_gb = 100
+    machine_type = "n2-standard-2"
+    disk_size_gb = 50
     min_nodes    = 1
     max_nodes    = 2
   }
